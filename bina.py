@@ -8,8 +8,8 @@ from asterisk.ami import EventListener
 import requests
 
 def event_notification(source, event):
-        os.system('curl -# -3 -X -k -XPOST -H "cookie: Seventh.Auth=eyJuIjoidm9pcCIsImEiOm51bGx9.6tnY42e44PURICRaVFNQWnxo" --header "Content-type: application/json" -d "{"accountCode": "s%", "zoneCode": "001", "eventCode": "s%",  "priority": 3,  "join": false }" http://10.254.254.72:8080/api/remote-events')
         binado = ( event['ConnectedLineNum'] )
+        os.system('curl -# -3 -X -k -XPOST -H "cookie: Seventh.Auth=eyJuIjoidm9pcCIsImEiOm51bGx9.6tnY42e44PURICRaVFNQWnxo" --header "Content-type: application/json" -d "{accountCode: "s%", zoneCode: 001, eventCode: "s%",  priority: 3,  join: false }" http://10.254.254.72:8080/api/remote-events' % binado)
         print binado
 
 
