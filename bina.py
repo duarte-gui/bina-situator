@@ -13,8 +13,8 @@ import requests
 #Executando o cURL com as variáveis binadas
 def event_notification(source, event):
         binado = ( event['ConnectedLineNum'] )
-        os.system('curl -# -3 -X -k -XPOST -H "cookie: Seventh.Auth=CHAVE_DO_USER_SITUATOR" --header "Content-type: application/json" -d "{accountCode: "s%", zoneCode: 001, eventCode: "s%",  priority: 3,  join: false }" http://10.254.254.72:8080/api/remote-events' % binado)
-        print ("%s" "%s" % binado)
+        os.system('curl -# -3 -X -k -XPOST -H "cookie: Seventh.Auth=CHAVE_DO_USER_SITUATOR" --header "Content-type: application/json" -d "{accountCode: "s%", zoneCode: 001, eventCode: "s%",  priority: 3,  join: false }" http://10.254.254.72:8080/api/remote-events' % (binado, binado))
+        print ("%s" "%s" % (binado, binado))
 
 #Login no AMI (Asterisk Manager) e escutando os "novos" eventos "Ringing", a fila "Exten" e um membro dentro da fila
 #Por enquanto está desse jeito já que a fila gera n eventos que são os membros da fila + a discagem pra esses membros
