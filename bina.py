@@ -17,7 +17,7 @@ def event_notification(source, event):
         print ("%s" "%s" % (binado, binado))
 
 #Login no AMI (Asterisk Manager) e escutando os "novos" eventos "Ringing", a fila "Exten" e um membro dentro da fila
-#Por enquanto está desse jeito já que a fila gera n eventos que são os membros da fila + a discagem pra esses membros
+#Por enquanto restringi ao Exten='100' e CallerIDName pra enviar apenas 1 evento, já que a fila gera n eventos que são os membros da fila + a discagem pra esses membros
 client = AMIClient(address="127.0.0.1")
 future = client.login(username="user", secret="password")
 client.add_event_listener(
