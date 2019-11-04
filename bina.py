@@ -19,7 +19,8 @@ def event_notification(source, event):
         'cookie': 'Seventh.Auth=eyJuIjoidGVzdGUiLCJhIjpudWxsfQ.B917GlYR9YIoqEnL4f5plilk',
         'Content-type': 'application/json',
     }
-    data = ('{accountCode: "%s", zoneCode: 001, eventCode: "%s",  priority: 3,  join: false}' % (binado, binado))
+    binadoxx = (binado[0:2])
+    data = ('{accountCode: "%s", zoneCode: 001, eventCode: "%s",  priority: 3,  join: false}' % (binadoxx, binado))
     response = requests.post('http://10.254.254.72:8080/api/remote-events', headers=headers, data=data, verify=False)
     print (data)
 
