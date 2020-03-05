@@ -6,7 +6,7 @@ from time import sleep
 from asterisk.ami import AMIClient
 from asterisk.ami import EventListener
 import os
-#import subprocess
+
 
 import requests
 
